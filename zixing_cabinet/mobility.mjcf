@@ -1,0 +1,24 @@
+<mujoco model="right-pull-door">
+  <compiler angle="radian" meshdir="texture_stl/"/>
+
+  <asset>
+    <mesh name="frame" file="frame.stl" scale="0.8 0.8 0.8"/>
+    <mesh name="board" file="board.stl" scale="0.8 0.8 0.8"/>
+    <mesh name="9962004" file="9962004.stl" scale="1.45964 1.45964 1.45964"/>
+  </asset>
+
+  <worldbody>
+    <geom name="out-frame" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="frame"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="frame"/>
+    <body name="link_1" pos="0 0.562529 0.334649" quat="0.5 0.5 -0.5 -0.5">
+      <joint name="joint_1" pos="0 0 0" axis="0 -1 0" range="0 1.50796"/>
+      <geom name="surf-board" pos="0.562529 -0.334649 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="board"/>
+      <geom pos="0.562529 -0.334649 0" quat="1 0 0 0" type="mesh" mesh="board"/>
+      <body name="link_2" pos="0.562529 -0.334649 0.0133813">
+        <joint name="joint_2" pos="0 0 0" axis="0 0 1" range="0 1.50796"/>
+        <geom name="handle" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="9962004"/>
+        <geom type="mesh" mesh="9962004"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
