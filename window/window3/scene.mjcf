@@ -26,13 +26,13 @@ w<mujoco model="fridge">
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
     <body name="door" euler="0 1.57 0" pos="0 0 0.48">
-      <joint type="free"/>
-      <geom name="frame" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="frame" material="door_material"/>
+<!--      <joint type="free"/>-->
+      <geom name="frame" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="frame" material="door_material" conaffinity="0" contype="0"/>
       <body name="link_1" pos="0 0.4266382184276609 0" quat="0.5 0.5 -0.5 -0.5">
-        <inertial pos="0 0 0" mass="100.0" diaginertia="5.0 5.0 5.0"/>
+        <inertial pos="0 0 0" mass="10.0" diaginertia="5.0 5.0 5.0"/>
         <joint name="joint_1" pos="0 0 0" axis="0 0 -1" range="0 1.50796"/>
         <geom name="board" pos="0.4266382184276609 0 0" quat="1 0 0 0" type="mesh" mesh="board" material="door_material"/>
-        <body name="link_2" pos="0.8231999820702591 -0.035 0.052945051072655125">
+        <body name="link_2" pos="0.84 -0.035 0.052945051072655125">
           <joint name="joint_2" pos="0 0 0" axis="0 1 0" range="-1.50796 1.50796" stiffness="2.0" damping="0.1"/>
           <geom name="handle" type="mesh" mesh="9969523" material="handle_material"/>
         </body>

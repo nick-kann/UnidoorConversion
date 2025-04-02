@@ -25,14 +25,14 @@
   <worldbody>
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
-    <body name="door" euler="0 1.57 0" pos="0 0 0.93">
-      <joint type="free"/>
-      <geom name="frame" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="frame" material="door_material"/>
+    <body name="door" euler="0 1.57 0" pos="0 0 0.95">
+<!--      <joint type="free"/>-->
+      <geom name="frame" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="frame" material="door_material" conaffinity="0" contype="0"/>
       <body name="link_1" pos="0 0.4815588565752399 0" quat="0.5 0.5 -0.5 -0.5">
-        <inertial pos="0 0 0" mass="100.0" diaginertia="5.0 5.0 5.0"/>
+        <inertial pos="0 0 0" mass="10.0" diaginertia="5.0 5.0 5.0"/>
         <joint name="joint_1" pos="0 0 0" axis="0 0 -1" range="0 1.50796"/>
-        <geom name="board" pos="0.4815588565752399 -0.04 0" quat="1 0 0 0" type="mesh" mesh="board" material="door_material"/>
-        <body name="link_2" pos="0.8838796815488454 -0.06 0.017780032004302074">
+        <geom name="board" pos="0.4815588565752399 0 0" quat="1 0 0 0" type="mesh" mesh="board" material="door_material"/>
+        <body name="link_2" pos="0.8838796815488454 -0.02 0.017780032004302074">
           <joint name="joint_2" pos="0 0 0" axis="0 1 0" range="-1.50796 1.50796" stiffness="2.0" damping="0.1"/>
           <geom name="handle" type="mesh" mesh="9962026" material="handle_material"/>
         </body>
